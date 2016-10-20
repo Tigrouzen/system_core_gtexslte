@@ -691,6 +691,10 @@ enum {
     AUDIO_DEVICE_OUT_ANC_HEADSET               = 0x4000000,
     AUDIO_DEVICE_OUT_ANC_HEADPHONE             = 0x8000000,
 #endif
+#if defined(SPRD_HARDWARE)
+    AUDIO_DEVICE_OUT_FM_HEADSET                = 0x1000000,
+    AUDIO_DEVICE_OUT_FM_SPEAKER                = 0x2000000,
+#endif
     AUDIO_DEVICE_OUT_DEFAULT                   = AUDIO_DEVICE_BIT_DEFAULT,
     AUDIO_DEVICE_OUT_ALL      = (AUDIO_DEVICE_OUT_EARPIECE |
                                  AUDIO_DEVICE_OUT_SPEAKER |
@@ -721,6 +725,10 @@ enum {
                                  AUDIO_DEVICE_OUT_ANC_HEADSET |
                                  AUDIO_DEVICE_OUT_ANC_HEADPHONE |
 #endif
+#if defined(SPRD_HARDWARE)
+                                 AUDIO_DEVICE_OUT_FM_HEADSET |
+                                 AUDIO_DEVICE_OUT_FM_SPEAKER |
+#endif
                                  AUDIO_DEVICE_OUT_DEFAULT),
     AUDIO_DEVICE_OUT_ALL_A2DP = (AUDIO_DEVICE_OUT_BLUETOOTH_A2DP |
                                  AUDIO_DEVICE_OUT_BLUETOOTH_A2DP_HEADPHONES |
@@ -730,6 +738,10 @@ enum {
                                  AUDIO_DEVICE_OUT_BLUETOOTH_SCO_CARKIT),
     AUDIO_DEVICE_OUT_ALL_USB  = (AUDIO_DEVICE_OUT_USB_ACCESSORY |
                                  AUDIO_DEVICE_OUT_USB_DEVICE),
+#if defined(SPRD_HARDWARE)
+    AUDIO_DEVICE_OUT_ALL_FM   = (AUDIO_DEVICE_OUT_FM_HEADSET |
+                                 AUDIO_DEVICE_OUT_FM_SPEAKER),
+#endif
 
     /* input devices */
     AUDIO_DEVICE_IN_COMMUNICATION         = AUDIO_DEVICE_BIT_IN | 0x1,

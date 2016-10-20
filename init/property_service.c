@@ -332,8 +332,8 @@ void handle_property_set_fd()
             if (check_perms(msg.name, source_ctx)) {
                 property_set((char*) msg.name, (char*) msg.value);
             } else {
-                ERROR("sys_prop: permission denied uid:%d  name:%s\n",
-                      cr.uid, msg.name);
+                ERROR("sys_prop: permission denied pid:%d uid:%d name:%s\n",
+                      cr.pid, cr.uid, msg.name);
             }
 
             // Note: bionic's property client code assumes that the
